@@ -1,33 +1,67 @@
+import java.util.HashSet;
 
 /**
  * Write a description of class Student here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Liudmila Strelnikova
+ * @version 16.03.2021
  */
+
 public class Student
+
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    //would not make any of the instance variables constants, since
+    //a student might decide to change all of the info provided
+   
+    private String name;
+    private String id;//ID is a number but it is not used in calculations, so it is more convinient to store it as a String
+    private String department;
+    private HashSet<Course> courses;//use hashset so that course names do not repeated
 
     /**
      * Constructor for objects of class Student
      */
-    public Student()
+    public Student(String name, String id, String department)
     {
-        // initialise instance variables
-        x = 0;
+        name = this.name;
+        id = this.id;
+        department = this.department;
+        courses = new HashSet<>();
     }
-
+    
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Accessormethods for all private fields of the class
      */
-    public int sampleMethod(int y)
+    
+    public String getName(){return name;}
+    
+    public String getID(){return id;}
+    
+    //Since choice of department is optional, return "Major not declared"
+    //if the student belongs to no department
+    public String getDepartment()
     {
-        // put your code here
-        return x + y;
+        if (department != null)
+        {
+            return department;
+        }
+        else
+        {
+            return "Major not declared";
+        }
     }
+    
+    //Gives an error now since getCouseName method is not yet implemented
+    //in the Course class.
+    /**
+    public String getCouses()
+    {
+        return courses.stream()
+            .filter(c -> c.getCourseName()) 
+            .reduce("", (acc,element) -> acc + element);
+        
+    }
+    */
+    
+    
 }
