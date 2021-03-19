@@ -23,9 +23,9 @@ public class Student
      */
     public Student(String name, String id, String department)
     {
-        name = this.name;
-        id = this.id;
-        department = this.department;
+        this.name = name;
+        this.id = id;
+        this.department = department;
         courses = new HashSet<>();
     }
     
