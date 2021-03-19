@@ -23,9 +23,9 @@ public class Student
      */
     public Student(String name, String id, String department)
     {
-        this.name = name;
-        this.id = id;
-        this.department = department;
+        name = this.name;
+        id = this.id;
+        department = this.department;
         courses = new HashSet<>();
     }
     
@@ -33,17 +33,17 @@ public class Student
      * Accessormethods for all private fields of the class
      */
     
-    public String getName(){return name;}
+    public String getName(){return this.name;}
     
-    public String getID(){return id;}
+    public String getID(){return this.id;}
     
     //Since choice of department is optional, return "Major not declared"
     //if the student belongs to no department
     public String getDepartment()
     {
-        if (department != null)
+        if (this.department != null)
         {
-            return department;
+            return this.department;
         }
         else
         {
@@ -51,17 +51,15 @@ public class Student
         }
     }
     
-    //Gives an error now since getCouseName method is not yet implemented
-    //in the Course class.
-    /**
+   
     public String getCouses()
     {
         return courses.stream()
-            .filter(c -> c.getCourseName()) 
+            .map(c -> c.getCourseTitle()) 
             .reduce("", (acc,element) -> acc + element);
         
     }
-    */
+    
     
     
 }

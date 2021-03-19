@@ -1,3 +1,4 @@
+import java.util.HashSet;
 
 /**
  * Write a description of class Course here.
@@ -8,26 +9,25 @@
 public class Course
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private String instructor;
+    private String title;
+    private String number;
+    private HashSet<Student> students;
+    
 
     /**
      * Constructor for objects of class Course
      */
-    public Course()
+    public Course(String instructor, String title, String number)
     {
-        // initialise instance variables
-        x = 0;
+       this.instructor = instructor;
+       this.title = title;
+       this.number = number;
+       students = new HashSet<>();
     }
+    
+    public String getCourseTitle(){return this.title;}
+    
+    
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
 }
