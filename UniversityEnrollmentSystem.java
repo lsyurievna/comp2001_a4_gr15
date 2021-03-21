@@ -1,33 +1,42 @@
-
+import java.util.HashSet;
 /**
- * Write a description of class UniversityEnrollmentSystem here.
+ * Here is where all the lists should be stored I think. And main methods implemented. 
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Liudmila Strelnikova
+ * @version 20.03.2021
  */
 public class UniversityEnrollmentSystem
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
+    private HashSet<Student> students;
+    private HashSet<Course> courses;
+    
     /**
      * Constructor for objects of class UniversityEnrollmentSystem
      */
     public UniversityEnrollmentSystem()
     {
-        // initialise instance variables
-        x = 0;
+        students = new HashSet<>();
+        courses = new HashSet<>();
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public void addCourse(Course course)
     {
-        // put your code here
-        return x + y;
+        courses.add(course);
     }
+    
+    //looks like code repetition though, maybe use inheritance somehow?
+    public void addStudent(Student student)
+    {
+        students.add(student);
+    }
+    
+    public void enrolStudent(Student student, Course course)
+    {
+        student.addCourse(course);
+        course.addStudent(student);
+    }
+    
+    //for marks assignment I think we should use a HashMap with 
+    //student id as a key, and ArrayList with marks as a value
+    
 }

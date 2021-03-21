@@ -1,4 +1,6 @@
 import java.util.HashSet;
+import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  * Write a description of class Course here.
@@ -13,7 +15,9 @@ public class Course
     private String title;
     private String number;
     private HashSet<Student> students;
-    
+    private HashMap<Integer,ArrayList<Integer>> grades;
+    //I suggest hashmap for the grades with student ID as a "key"
+    //and ArrayList of marks of type integer as a "value"
 
     /**
      * Constructor for objects of class Course
@@ -27,6 +31,16 @@ public class Course
     }
     
     public String getCourseTitle(){return this.title;}
+    
+    public void addStudent(Student student)
+    {
+        students.add(student);
+    }
+    
+    public void assignGrade(Student student, int grade)
+    {
+        //grades.add(student.getID(), 
+    }
     
     
 

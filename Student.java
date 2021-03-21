@@ -14,14 +14,14 @@ public class Student
     //a student might decide to change all of the info provided
    
     private String name;
-    private String id;//ID is a number but it is not used in calculations, so it is more convinient to store it as a String
+    private int id; 
     private String department;
     private HashSet<Course> courses;//use hashset so that course names do not repeated
 
     /**
      * Constructor for objects of class Student
      */
-    public Student(String name, String id, String department)
+    public Student(String name, int id, String department)
     {
         name = this.name;
         id = this.id;
@@ -35,7 +35,7 @@ public class Student
     
     public String getName(){return this.name;}
     
-    public String getID(){return this.id;}
+    public int getID(){return this.id;}
     
     //Since choice of department is optional, return "Major not declared"
     //if the student belongs to no department
@@ -61,5 +61,14 @@ public class Student
     }
     
     
+    public void addCourse(Course course)
+    {
+        courses.add(course);
+        //when we do that, a student's name shoud automaticall be added
+        //to the course's student list as well
+        //how could we do that?...
+        //Maybe we should do that in a completely separate class to avoid 
+        //code duplication.
+    }
     
 }
