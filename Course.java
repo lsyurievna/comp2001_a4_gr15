@@ -30,16 +30,15 @@ public class Course
        students = new HashSet<>();
     }
     
-    public String getCourseTitle(){return this.title;}
+    public String getCourseTitle(){return title;}
     
-    public void addStudent(Student student)
+
+    /**
+     * Prints info about the course.
+     */
+    public String getInfo()
     {
-        students.add(student);
-    }
-    
-    public void assignGrade(Student student, int grade)
-    {
-        //grades.add(student.getID(), 
+        return ("Course name: " + title + ", course ID: " + number + ", instructor: " + instructor + ".");
     }
     
     
