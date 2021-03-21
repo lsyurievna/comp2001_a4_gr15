@@ -14,36 +14,38 @@ public class Student
     //a student might decide to change all of the info provided
    
     private String name;
-    private int id; 
+    private String id; 
     private String department;
     private HashSet<Course> courses;//use hashset so that course names do not repeated
 
     /**
-     * Constructor for objects of class Student
+     * Constructor for students who have chosen a major. 
      */
-    public Student(String name, int id, String department)
+    public Student(String name, String id, String department)
     {
-        name = this.name;
-        id = this.id;
-        department = this.department;
+        this.name = name;
+        this.id = id;
+        this.department = department;
         courses = new HashSet<>();
     }
     
     /**
-     * Accessormethods for all private fields of the class
+     * Constructor for students who have not chosen a major
      */
-    
-    public String getName(){return this.name;}
-    
-    public int getID(){return this.id;}
+    public Student(String name, String id)
+    {
+        this.name = name;
+        this.id = id;
+        courses = new HashSet<>();
+    }
     
     //Since choice of department is optional, return "Major not declared"
     //if the student belongs to no department
     public String getDepartment()
     {
-        if (this.department != null)
+        if (department != null)
         {
-            return this.department;
+            return department;
         }
         else
         {
@@ -69,6 +71,15 @@ public class Student
         //how could we do that?...
         //Maybe we should do that in a completely separate class to avoid 
         //code duplication.
+    }
+    
+    /**
+     * Returns all the information about a student except the department.
+     * @return string with student information
+     */
+    public String getInfo()
+    {
+        return ("Student's name: " + name + ", ID: " + id + ".");
     }
     
 }

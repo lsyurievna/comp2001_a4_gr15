@@ -13,11 +13,27 @@ import org.junit.Test;
  */
 public class UniversityEnrollmentSystemTest
 {
-    
+    private Student Mary;
+    private Student Akheel;
+    private Student Bob;
     private Course Math1001;
     private Course COMP2001;
     private Course PHYS1501;
     private UniversityEnrollmentSystem universityEnrollmentSystem;
+
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
 
     /**
      * Default constructor for test class UniversityEnrollmentSystemTest
@@ -34,7 +50,9 @@ public class UniversityEnrollmentSystemTest
     @Before
     public void setUp()
     {
-        
+        Mary = new Student("Mary Brown", "20181", "Physics");
+        Akheel = new Student("Akheel Raman", "20173");
+        Bob = new Student("Bob Squares", "20168", "Physics");
         Math1001 = new Course("Jim Bob", "Math", "1001");
         COMP2001 = new Course("Adrian Fiech", "COMP", "2001");
         PHYS1501 = new Course("Michael Rosengbaum", "PHYS", "1501");
@@ -43,6 +61,9 @@ public class UniversityEnrollmentSystemTest
         universityEnrollmentSystem.addCourse(COMP2001);
         universityEnrollmentSystem.addCourse(Math1001);
         universityEnrollmentSystem.addCourse(PHYS1501);
+        universityEnrollmentSystem.addStudent(Mary);
+        universityEnrollmentSystem.addStudent(Bob);
+        universityEnrollmentSystem.addStudent(Akheel);
     }
 
     /**
@@ -74,7 +95,14 @@ public class UniversityEnrollmentSystemTest
     {
         universityEnrollmentSystem.printCoursesInfo();
     }
+
+    @Test
+    public void test_getStudentsInDepartment()
+    {
+        universityEnrollmentSystem.printStudentsInDepartment("Physics");
+    }
 }
+
 
 
 

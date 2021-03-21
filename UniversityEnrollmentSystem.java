@@ -70,6 +70,16 @@ public class UniversityEnrollmentSystem
         return courses.size();
     }
     
+    /**
+     * Prints info on Students in a given department.
+     */
+    public void printStudentsInDepartment(String department)
+    {
+        students.stream()
+        .filter(ss -> ss.getDepartment().equals(department))
+        .forEach(ss -> System.out.println(ss.getInfo()));
+    }
+    
     
     
     
