@@ -1,22 +1,21 @@
 import java.util.HashSet;
 
 /**
- * Write a description of class Student here.
+ * A student class contains the student's name, id, and department if a student has 
+ * chosen a major. It also contains a set of courses into which the student is enrolled in.
+ * 
  *
  * @author Liudmila Strelnikova
- * @version 16.03.2021
+ * @version 22.03.2021
  */
 
 public class Student
 
 {
-    //would not make any of the instance variables constants, since
-    //a student might decide to change all of the info provided
-   
     private String name;
     private String id; 
     private String department;
-    private HashSet<Course> courses;//use hashset so that course names do not repeated
+    private HashSet<Course> courses;
 
     /**
      * Constructor for students who have chosen a major. 
@@ -39,8 +38,13 @@ public class Student
         courses = new HashSet<>();
     }
     
-    //Since choice of department is optional, return "Major not declared"
-    //if the student belongs to no department
+    
+    /**
+     * Returns the student's department. Since choice of department is optional,
+     * return "Major not declared" if the student belongs to no department
+     * @return department in which the student is studying.
+     */
+    
     public String getDepartment()
     {
         if (department != null)
@@ -60,18 +64,8 @@ public class Student
     public HashSet getCourses()
     {
         return courses;
-        
     }
-    
-    
-    /**
-     * Returns all the information about a student except the department.
-     * @return string with student information
-     */
-    public String getInfo()
-    {
-        return ("Student's name: " + name + ", ID: " + id + ".");
-    }
+
     
     /**
      * Returns the student's name
@@ -83,11 +77,13 @@ public class Student
     }
     
     /**
-     * Adds a new course to the student's list of courses.
+     * Returns all the information about a student except the department.
+     * @return string with student information
      */
-    public void addCourse(Course course)
+    public String getInfo()
     {
-        courses.add(course);
+        return ("Student's name: " + name + ", ID: " + id + ".");
     }
+    
 }
 
