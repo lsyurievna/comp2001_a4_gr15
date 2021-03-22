@@ -53,25 +53,16 @@ public class Student
         }
     }
     
-   
-    public String getCouses()
+    /**
+     * Returns a set of courses into which the student is enrolled.
+     * @return set of courses
+     */
+    public HashSet getCourses()
     {
-        return courses.stream()
-            .map(c -> c.getCourseTitle()) 
-            .reduce("", (acc,element) -> acc + element);
+        return courses;
         
     }
     
-    
-    public void addCourse(Course course)
-    {
-        courses.add(course);
-        //when we do that, a student's name shoud automaticall be added
-        //to the course's student list as well
-        //how could we do that?...
-        //Maybe we should do that in a completely separate class to avoid 
-        //code duplication.
-    }
     
     /**
      * Returns all the information about a student except the department.
@@ -82,4 +73,21 @@ public class Student
         return ("Student's name: " + name + ", ID: " + id + ".");
     }
     
+    /**
+     * Returns the student's name
+     * @return student's name as a string
+     */
+    public String getName()
+    {
+        return name;
+    }
+    
+    /**
+     * Adds a new course to the student's list of courses.
+     */
+    public void addCourse(Course course)
+    {
+        courses.add(course);
+    }
 }
+

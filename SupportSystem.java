@@ -1,33 +1,37 @@
-
+import java.util.HashSet;
 /**
- * Write a description of class SupportSystem here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * The support system should enroll a student in a specific course. 
+ * Can make this class abstract and call it from the UniversityEnrollmentSystem.
  */
 public class SupportSystem
 {
-    // instance variables - replace the example below with your own
-    private int x;
 
     /**
      * Constructor for objects of class SupportSystem
      */
     public SupportSystem()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Enrolls a student who contacted the support system into a given course.
+     * @param course the student wishes to be enrolled into
      */
-    public int sampleMethod(int y)
+    //Not a very good way of doing it but I can't come up with a better solution.
+    public void enroll(Student student, Course course)
     {
-        // put your code here
-        return x + y;
+        student.getCourses().add(course);
+        course.getStudents().add(student);
+        
+    }
+    
+    /**
+     * Shows grades to the student for a particular course.
+     */
+    public void showGradesForCourse(Student student, Course course)
+    {
+        Instructor instructor = course.getInstructor();
+        
     }
 }

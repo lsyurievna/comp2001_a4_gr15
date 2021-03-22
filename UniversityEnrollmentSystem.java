@@ -30,16 +30,13 @@ public class UniversityEnrollmentSystem
         courses.add(course);
     }
     
-    //looks like code repetition though, maybe use inheritance somehow?
+    /**
+     * As a students enters university, his name is added to the set of students.
+     * @param student who entered university
+    */
     public void addStudent(Student student)
     {
         students.add(student);
-    }
-    
-    public void enrollStudent(Student student, Course course)
-    {
-        student.addCourse(course);
-        //course.addStudent(student);
     }
     
     /**
