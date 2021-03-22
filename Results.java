@@ -18,7 +18,27 @@ public class Results
         // initialise instance variables
         x = 0;
     }
+}
+    
+    private double gradeToPoint(String Results, int credit){
+		double points = 0.0;
+		if(Results == null)
+			return 0.0;
+		if(Results.equals("A"))
+			points = 4.0 * credit;
+		else if(Results.equals("B"))
+			points = 3.0 * credit;
+		else if(Results.equals("C"))
+			points = 2.0 * credit;
+		else if(Results.equals("D"))
+			points = credit;
+		else if(Results.equals("F"))
+			points = 0.0;
+		else if(Results.equals("null"))
+			points = 0.0;
 
+		return points;
+	}
     /**
      * An example of a method - replace this comment with your own
      *
