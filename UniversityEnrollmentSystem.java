@@ -47,28 +47,10 @@ public class UniversityEnrollmentSystem
         courses.stream()
         .forEach(c -> System.out.println(c.getInfo()));
     }
-    
+ 
+
     /**
-     * Returns true if any courses are offered. Returns false if no courses are offered.
-     * @return true or false
-     */
-    public boolean coursesExist()
-    {
-        if (courses.size() == 0){return false;}
-        else {return true;}
-    }
-    
-    /**
-     * Returns the number of courses that is offered by university.
-     * @return number of course
-     */
-    public int getNumberOfCourses()
-    {
-        return courses.size();
-    }
-    
-    /**
-     * Prints info on Students in a given department.
+     * Prints info on students in a given department.
      */
     public void printStudentsInDepartment(String department)
     {
@@ -76,6 +58,7 @@ public class UniversityEnrollmentSystem
         .filter(ss -> ss.getDepartment().equals(department))
         .forEach(ss -> System.out.println(ss.getInfo()));
     }
+
     
     
     

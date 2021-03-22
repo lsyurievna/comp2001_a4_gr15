@@ -3,20 +3,20 @@ import java.util.HashMap;
 import java.util.ArrayList;
 
 /**
- * Write a description of class Course here.
+ * This class represents a university course. The university course stores a list of students
+ * enrolled in the course, instructor's name, the course's title and id.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Liudmila Strelnikova
+ * @version 22.03.2021
  */
 public class Course
 {
-    // instance variables - replace the example below with your own
+    
     private Instructor instructor;
     private String title;
     private String number;
     private HashSet<Student> students;
-    //I suggest hashmap for the grades with student ID as a "key"
-    //and ArrayList of marks of type integer as a "value"
+    
 
     /**
      * Constructor for objects of class Course
@@ -29,6 +29,10 @@ public class Course
        students = new HashSet<>();
     }
     
+    /**
+     * Returns the class list for the course.
+     * @return students list of students enrolled in the course
+     */
     public HashSet getStudents()
     {
         return students;
@@ -36,20 +40,20 @@ public class Course
     
 
     /**
-     * Prints info about the course.
-     */
-    public String getInfo()
-    {
-        return ("Course name: " + title + ", course ID: " + number + ", instructor: " + instructor.getName() + ".");
-    }
-    
-    /**
      * Returns the instructor who teaches the course
      * @return instructor of the course
      */
     public Instructor getInstructor()
     {
         return instructor;
+    }
+    
+    /**
+     * Prints info about the course.
+     */
+    public String getInfo()
+    {
+        return ("Course name: " + title + ", course ID: " + number + ", instructor: " + instructor.getName() + ".");
     }
     
 

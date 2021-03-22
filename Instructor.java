@@ -1,27 +1,30 @@
 import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  * This is a university instructor. In this simple version of the program, the 
  * instructor's  role is to assign grades to students in a specific class, 
  * return the map with grades and students (post grades). The map itself is also stored in
  * this class.
- * Assume instructor only teaches one course.
+ * 
  */
 public class Instructor
 {
-    // instance variables - replace the example below with your own
-    private Course course;
+    
+    
     private String name;
-    private HashMap<Student, Integer> grades;
+    private ArrayList<Integer> grades;
+    private HashMap<Student, ArrayList> gradeMap;
 
     /**
      * Constructor for objects of class Professor
      */
-    public Instructor(Course course, String name)
+    public Instructor(String name)
     {
-        this.course = course;
+        
         this.name = name;
-        grades = new HashMap<>();
+        gradeMap = new HashMap<>();
+        grades = new ArrayList<>();
     }
 
     /**
@@ -31,15 +34,18 @@ public class Instructor
      */
     private void assignGrade(Student student, Integer grade)
     {
-        grades.put(student, grade);
+        
+        grades.add(grade);
+        gradeMap.put(student,grades);
+        
     }
     
     /**
      * Return the map containing the student's grades.
      */
-    public HashMap getGrades()
+    public HashMap getGradeMap()
     {
-        return grades;
+        return gradeMap;
     }
     
     /**
@@ -48,7 +54,7 @@ public class Instructor
      */
     public String getName()
     {
-        return getName();
+        return name;
     }
     
     
